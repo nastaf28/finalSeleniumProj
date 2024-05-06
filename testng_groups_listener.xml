@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="regression suite">
+    <listeners>
+        <listener class-name="org.eat.base.TestListeners"></listener>
+    </listeners>
+    <test name="final project testing">
+        <groups>
+            <define name="REG">
+                <include name="regression"></include>
+            </define>
+            <define name="SMOKE">
+                <include name="smoke"></include>
+            </define>
+            <run>
+                <include name="SMOKE"></include>
+                <include name="REG"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.eat.tests.LoginTest">
+            </class>
+            <class name="org.eat.tests.ShoppingTest">
+            </class>
+        </classes>
+    </test>
+</suite>
